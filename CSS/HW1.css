@@ -1,0 +1,50 @@
+.title
+{
+	color: white;
+	font-size: 50px;
+	background-color: black;
+	text-align: center;
+}
+
+
+.navMenu
+{
+	text-align: center;
+	color: white;
+	background-color: black;
+
+}
+
+.navMenuSelect
+{
+	position: relative;
+	border: 2px solid gray;
+	display: inline-block;
+	height: 30px;
+	width: 24%;
+}
+
+
+
+.mid
+{
+	background-color: black;
+
+}
+
+.centerImage
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	display: block;
+}
+
+.end
+{
+	color: white;
+	font-size: 20px;
+	background-color: black;
+	text-align: center;
+	
+}
