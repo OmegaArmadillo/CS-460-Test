@@ -1,0 +1,113 @@
+<html lang = "en-us">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="CSS\HW1.css">
+
+
+<script>
+
+	var currentPicture = 1;
+	topPlaces(currentPicture);
+	
+	function changePicture(value)
+	{
+		topPlaces(currentPicture += value);
+	}
+	
+	function topPlaces(value)
+	{
+		var i;
+		var pictureAmount = getElementsByClassName("centerImageSight");
+		
+		if (value > pictureAmount.length) 
+		{
+			currentPicture = 1
+		}
+		
+		if (value < 1)
+		{
+			currentPicture = pictureAmount.length
+		}
+		
+		for (i = 0; i < pictureAmount.length; i++)
+		{
+			pictureAmount[i].style.display = "none";
+		}
+	
+		pictureAmount[currentPicture - 1].style.display = "block";
+	
+	}
+
+
+</script>
+
+
+
+<head>
+	<title> Sunrise Sands </title>
+	
+
+	
+	<div class = "sun">
+	
+		
+	</div>
+	
+	
+	<div class = "titleBox">
+		<div>
+			<a href = "CS460_HW1.html"> Sunrise Sands </a>
+		</div>
+	</div>
+</head>
+
+
+<body>
+
+	<div class = "navMenu">
+		<ul class = "navMenuList">
+		
+			<li class = "navMenuListItem"> <a href = "HW1_Sights.html"> Sights </a> </li>
+			<li class = "navMenuListItem"> <a href = "HW1_Rates.html"> Rates </a></li>
+			<li class = "navMenuListItem"> test3 </li>
+			<li class = "navMenuListItem"> test4 </li>
+			<li class = "navMenuListItem"> test5 </li>
+		
+		</ul>
+	</div>
+
+
+
+	<div>
+		<div class = "sightListDiv">
+		<ul class = "sightList">
+			<li class = "sightListItem"> <button onclick = "changePicture(-1)"> Pic 1 </button> </li>
+			<li class = "sightListItem"> <button onclick = "changePicture(+1)"> Pic 2 </button>  </li>
+			<li class = "sightListItem"> test </li>
+			<li class = "sightListItem"> test </li>
+			<li class = "sightListItem"> test </li>
+			<li class = "sightListItem"> test </li>
+			
+		</ul>
+		</div>
+		
+		
+		<div class = "sightPicDiv">
+		
+			<img src= "Images/beach.jpg" class = "centerImageSight">
+			<img src= "Images/beach2.jpg" class = "centerImageSight">
+		
+		</div>
+		
+		
+	</div>
+	
+	<div class = "sightDesc">
+		<div >
+			Description of Picture
+		</div>
+	</div>
+	
+</body>
+</html>

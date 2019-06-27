@@ -1,34 +1,78 @@
-.title
+*
+{
+	font-family: "Palatino"
+}
+
+
+
+a:visited {
+  color: white;
+}
+
+.titleBox
 {
 	color: white;
 	font-size: 50px;
-	background-color: black;
-	text-align: center;
+	background-color: MediumBlue;
+	width: 100%;
 }
 
+.title
+{
+	
+}
+
+.sun
+{
+	height: 70px;
+	width: 70px;
+	background-color: yellow;
+	border-radius: 50%;
+
+	float: left;
+
+}
 
 .navMenu
 {
 	text-align: center;
 	color: white;
-	background-color: black;
+	background-color: GoldenRod;
+	height: 40px;
 
 }
 
 .navMenuSelect
 {
 	position: relative;
-	border: 2px solid gray;
+	border: 2px solid white;
+	border-radius: 50%;
+	/*background-color: red;*/
 	display: inline-block;
 	height: 30px;
 	width: 24%;
 }
 
 
+.navMenuList
+{
+
+	list-style-type: none;
+	
+}
+
+
+.navMenuListItem
+{
+	float: left;
+	margin:0 0 0 50px;
+	font-size: 20px;
+}
+
 
 .mid
 {
-	background-color: black;
+	background-color: white;
 
 }
 
@@ -36,9 +80,69 @@
 {
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
+	width: 50%;
 	display: block;
 }
+
+.centerImageSight
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	display: none;
+	
+}
+
+.sightListDiv
+{
+	width: 30%;
+	float: left;
+	background-color: snow;
+	border-right: 10px solid MediumBlue;
+	
+	/*background-image: url('../Images/sand.jpg');*/
+
+}
+
+
+.sightList
+{
+	height: 565px;
+	list-style-type: none;
+	/*border: 3px solid Khaki;*/
+
+}
+
+
+.sightListItem
+{
+	border: 3px solid White;
+	background-color: MediumBlue;
+	width: 75%;
+	height: 50px;
+	float: left;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	/*border-radius:50%;
+	margin:0 0 20px 0; */
+	
+}
+
+
+.sightPicDiv
+{
+	/*background-image: url('../Images/sand.jpg');*/
+	background-color: snow;
+}
+
+.sightDesc
+{
+	background-color: Snow;
+	border: 10px solid MediumBlue;
+	height: 135px;
+}
+
 
 .end
 {
