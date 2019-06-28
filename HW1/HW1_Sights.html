@@ -7,35 +7,30 @@
 
 <script>
 
+/* edited from https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self*/
+
 	var currentPicture = 1;
 	topPlaces(currentPicture);
 	
 	function changePicture(value)
 	{
-		topPlaces(currentPicture += value);
+		currentPicture = value;
+		topPlaces(value);
 	}
 	
 	function topPlaces(value)
 	{
 		var i;
-		var pictureAmount = getElementsByClassName("centerImageSight");
+		var pictureAmount = document.getElementsByClassName("centerImageSight");
 		
-		if (value > pictureAmount.length) 
-		{
-			currentPicture = 1
-		}
-		
-		if (value < 1)
-		{
-			currentPicture = pictureAmount.length
-		}
+
 		
 		for (i = 0; i < pictureAmount.length; i++)
 		{
 			pictureAmount[i].style.display = "none";
 		}
 	
-		pictureAmount[currentPicture - 1].style.display = "block";
+		pictureAmount[currentPicture].style.display = "block";
 	
 	}
 
@@ -77,19 +72,22 @@
 		</ul>
 	</div>
 
-
+	<div class = "pageIntro">Click on a location to see the various different sights on your trip.</div>
 
 	<div>
 		<div class = "sightListDiv">
-		<ul class = "sightList">
-			<li class = "sightListItem"> <button onclick = "changePicture(-1)"> Pic 1 </button> </li>
-			<li class = "sightListItem"> <button onclick = "changePicture(+1)"> Pic 2 </button>  </li>
-			<li class = "sightListItem"> test </li>
+		
+		Most visited sights.
+		
+		<ol class = "sightList">
+			<li class = "sightListItem" onclick = "changePicture(0)"> Beach 1</li>
+			<li class = "sightListItem" onclick = "changePicture(1)"> Beach 2 </li>
+			<li class = "sightListItem" onclick = "changePicture(1)"> test </li>
 			<li class = "sightListItem"> test </li>
 			<li class = "sightListItem"> test </li>
 			<li class = "sightListItem"> test </li>
 			
-		</ul>
+		</ol>
 		</div>
 		
 		
@@ -103,11 +101,7 @@
 		
 	</div>
 	
-	<div class = "sightDesc">
-		<div >
-			Description of Picture
-		</div>
-	</div>
+
 	
 </body>
 </html>

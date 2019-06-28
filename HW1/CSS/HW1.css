@@ -84,21 +84,32 @@ a:visited {
 	display: block;
 }
 
+
+.pageIntro
+{
+	text-align: center;
+	font-size: 25px;
+	border-bottom: 10px solid MediumBlue;
+}
+
+
 .centerImageSight
 {
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 60%;
 	display: none;
 	
 }
 
 .sightListDiv
 {
-	width: 30%;
+	width: 20%;
 	float: left;
-	background-color: snow;
+	background-color: GoldenRod;
 	border-right: 10px solid MediumBlue;
+	text-align: center;
+	font-size: 25px;
 	
 	/*background-image: url('../Images/sand.jpg');*/
 
@@ -108,7 +119,7 @@ a:visited {
 .sightList
 {
 	height: 565px;
-	list-style-type: none;
+
 	/*border: 3px solid Khaki;*/
 
 }
@@ -116,9 +127,9 @@ a:visited {
 
 .sightListItem
 {
-	border: 3px solid White;
+	border: 3px solid GoldenRod;
 	background-color: MediumBlue;
-	width: 75%;
+	width: 100%;
 	height: 50px;
 	float: left;
 	text-align: center;
@@ -148,7 +159,7 @@ a:visited {
 {
 	color: white;
 	font-size: 20px;
-	background-color: black;
+	background-color: MediumBlue;
 	text-align: center;
 	
 }
