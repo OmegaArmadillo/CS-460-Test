@@ -17,10 +17,7 @@ a:visited {
 	width: 100%;
 }
 
-.title
-{
-	
-}
+
 
 .sun
 {
@@ -42,16 +39,6 @@ a:visited {
 
 }
 
-.navMenuSelect
-{
-	position: relative;
-	border: 2px solid white;
-	border-radius: 50%;
-	/*background-color: red;*/
-	display: inline-block;
-	height: 30px;
-	width: 24%;
-}
 
 
 .navMenuList
@@ -144,7 +131,8 @@ a:visited {
 .sightPicDiv
 {
 	/*background-image: url('../Images/sand.jpg');*/
-	background-color: snow;
+	background-color: snow;'
+	width: 70%;
 }
 
 .sightDesc
@@ -162,4 +150,17 @@ a:visited {
 	background-color: MediumBlue;
 	text-align: center;
 	
+}
+
+#sightCarousel
+{
+	float:right;
+	width: 80%;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  font-size: 30px;
+  width: 100%;
 }

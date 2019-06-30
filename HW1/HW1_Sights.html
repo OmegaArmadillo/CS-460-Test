@@ -3,40 +3,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
 	<link rel="stylesheet" type="text/css" href="CSS\HW1.css">
 
 
-<script>
-
-/* edited from https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_self*/
-
-	var currentPicture = 1;
-	topPlaces(currentPicture);
-	
-	function changePicture(value)
-	{
-		currentPicture = value;
-		topPlaces(value);
-	}
-	
-	function topPlaces(value)
-	{
-		var i;
-		var pictureAmount = document.getElementsByClassName("centerImageSight");
-		
-
-		
-		for (i = 0; i < pictureAmount.length; i++)
-		{
-			pictureAmount[i].style.display = "none";
-		}
-	
-		pictureAmount[currentPicture].style.display = "block";
-	
-	}
 
 
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
 
@@ -66,9 +40,6 @@
 		
 			<li class = "navMenuListItem"> <a href = "HW1_Sights.html"> Sights </a> </li>
 			<li class = "navMenuListItem"> <a href = "HW1_Rates.html"> Rates </a></li>
-			<li class = "navMenuListItem"> test3 </li>
-			<li class = "navMenuListItem"> test4 </li>
-			<li class = "navMenuListItem"> test5 </li>
 		
 		</ul>
 	</div>
@@ -81,12 +52,10 @@
 		Most visited sights.
 		
 		<ol class = "sightList">
-			<li class = "sightListItem" onclick = "changePicture(0)"> Beach 1</li>
-			<li class = "sightListItem" onclick = "changePicture(1)"> Beach 2 </li>
-			<li class = "sightListItem" onclick = "changePicture(1)"> test </li>
-			<li class = "sightListItem"> test </li>
-			<li class = "sightListItem"> test </li>
-			<li class = "sightListItem"> test </li>
+			<li class = "sightListItem"> Beach 1</li>
+			<li class = "sightListItem"> Beach 2 </li>
+			<li class = "sightListItem"> Beach 3 </li>
+
 			
 		</ol>
 		</div>
@@ -94,14 +63,31 @@
 		
 		<div class = "sightPicDiv">
 		
-			<img src= "Images/beach.jpg" class = "centerImageSight">
-			<img src= "Images/beach2.jpg" class = "centerImageSight">
-		
-		</div>
-		
-		
-	</div>
+			<div id = "sightCarousel" class = "carousel slide" data-ride = "carousel" data-interval = "4000" >
+
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="Images/beach.jpg" alt="beach 1" style="width:85%;">
+					</div>
+
+					<div class="carousel-item">
+						<img src="Images/beach2.jpg" alt="beach 2" style="width:85%;">
+					</div>
+    
+					<div class="carousel-item">
+						<img src="Images/beach3.jpg" alt="beach 3" style="width:85%;">
+					</div>
 	
+				</div>
+		
+			</div>
+				
+		</div>
+	
+
+
+</div>
+
 
 	
 </body>

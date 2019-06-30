@@ -18,15 +18,182 @@ CS460 Project 1: Basic Webpage Creation
 
 
 
-<div>
-</div>
-
-<body>
-
 	<div>
+
 	This page contains information about my Project 1.
+	<br>The purposes of this project was to do things like learn how to create a repository, learn how to interact with the repository using the command line, create a webpage with html and css along with using Bootstrap.
+	<br>We also had a list of requirments for our webpage.
+	<br>For my website I had the idea of creating a website for a traveling agency.
+	<br>The pages I created included a home page, a page that shows different locations, and a page that shows the travel rates.
+	<br>
+	
 	</div>
 
+<body>
+	<p>
+		<div class = "hwTitle">
+			Creating the Repository
+		</div>
+This part required me to create a GitHub repository and learn how to do things such as being able add and commit files from the command line.
+<br> At first I used this <a href = "https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line"> page </a> to learn how to start.
+<br> I then followed these steps.
+	<ol>
+		<li>Created a new repository manually in GitHub.</li>
+		<li>Used the command <code>git init</code> to initialize the repository in the correct folder.</li>
+		<li>Used the command <code>git add .</code> to add the files to stage them for commiting.</li>
+		<li>Used the command <code>git commit -m "First commit" </code> to commit the files that I staged.</li>
+		<li>Found my repository's url in the setup page of my repository. (https://omegaarmadillo.github.io/CS-460-Test/)</li>
+		<li>Used the command <code>git remote add origin https://omegaarmadillo.github.io/CS-460-Test/</code> to set a new remote.</li>
+		<li>Used the command <code>git remote -v</code> to verify the remote.</li>
+		<li>Finally I used the command <code>git push origin master</code> to push the code to the repository.</li>
+	</ol>
+ I also learned about the uses of the pull command.
+<br> I had to use it after I had edited and deleted some files in my repository and tried to push files. 	
+<br> I then got the error "Updates were rejected because the remote contains work that you donot have locally". 
+<br> After I got this error I did some research and learned I had to use <code>git pull origin master</code> to fix the issue before I could push to the repository.
+	
+	<code> </code>
+	</p>
+	
+	<p>
+		<div class = "hwTitle">
+			Creating the Webpage
+		</div>
+	
+		For this part there were these were the things that were required
+		<ol>
+			<li>You must use Bootstrap (v4) for the layout of all pages and must demonstrate both single column layout and two or more column formatting</li>
+			<li>You must have a separate CSS file (e.g. styles.css) in which you write some of your own classes and that you use somewhere</li>
+			<li>You'll need a navigation bar or menu that contains links to all your pages</li>
+			<li>You need to have at least one table and at least two kinds of lists: ol, ul and dl</li>
+		</ol>
+
+		<div class = "hwSubTitle">
+		1. Implementing Bootstrap
+		</div>
+		To implement Bootstrap I had to add this code to the webpage.
+		<br> <code> &#60; link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" &#62; </code>
+	</p>
+
+	<p>
+
+		<div class = "hwSubTitle">
+	<br>	2. Have a seperate CSS file for styles and create your own classes
+		</div>
+		
+		This part was relatively simple.
+		<br> I started by creating a css file called HW1.css
+		<br> For each page I added <code>	&#60; link rel="stylesheet" type="text/css" href="CSS\HW1.css" &#62; </code> to link the style sheet to the page.
+		<br> Here are some examples of the classes I created.
+		
+		
+		<div class = "codeBox">
+		
+			<div class  = "blue">*</div>
+			{
+			<div class = "code">
+				
+				
+				<span class = "blue">font-family:</span> "Palatino";
+				
+			</div>
+			}
+
+
+
+		<br> <span class = "blue">a</span>:<span class = "red">visited</span>
+		<br>{
+		  <div class = "code">
+		  <span class = "blue">color:</span> white;
+			</div>
+		}
+
+		<br>.<span class = "red">titleBox</span>
+		<br>{
+			<div>
+			 <span class = "blue">color:</span> white;
+			<br><span class = "blue">font-size</span> 50px;
+			<br><span class = "blue">background-color</span> MediumBlue;
+			<br><span class = "blue">width</span> 100%;
+			</div>
+		}
+	</div>
+
+	</p>
+	
+	<p>
+	
+		<div class = "hwSubTitle">
+		<br>	3. Create a navigation bar
+		</div>
+	
+		For this I decided to use an unordered list as a navigation bar so i could fufill two requirements.
+		<br>This is my code
+
+	<div class = "codeBox">	
+
+		
+		
+	<div >		<span class = "blue">&#60;div</span> <span class = "red">class</span> = <span class = "blue">"navMenu"&#62; </div> </span>
+	<div class = "code">	<span class = "blue">&#60;ul</span> <span class = "red">class</span> = <span class = "blue">"navMenuList"&#62;<span> </div>
+		
+	<div class = "code">		<span class = "blue">&#60;li</span> <span class = "red">class</span> = <span class = "blue">"navMenuListItem"&#62; &#60;a</span> <span class = "red">href</span> = <span class = "blue">"HW1_Sights.html"&#62;</span> Sights <span class = "blue">&#60;/a&#62; &#60;/li&#62;</span> </div>
+	<div class = "code">		<span class = "blue">&#60;li</span> <span class = "red">class</span> = <span class = "blue">"navMenuListItem"&#62; &#60;a</span> <span class = "red">href</span> = <span class = "blue">"HW1_Rates.html"&#62;</span> Rates <span class = "blue">&#60;/a&#62; &#60;/li&#62;</span> </div>
+			
+	<div class = "code">	<span class = "blue">&#60;/ul&#62;</span> </div>
+		
+		
+	<div>	<span class = "blue">&#60;/div&#62;</span> </div>
+		
+		
+		</div>
+
+	<br>These are the styles I created
+	<div class = "codeBox">
+	
+	.<span class = "red">navMenu</span>
+	<br>{
+	<br><span class = "blue">text-align:</span> center;
+	<br><span class = "blue">color:</span> white;
+	<br><span class = "blue">background-color:</span> GoldenRod;
+	<br><span class = "blue">height:</span> 40px;
+	<br>}
+
+
+
+	<br>.<span class = "red">navMenuList</span>
+	<br>{
+
+	<br><span class = "blue">list-style-type:</span> none;
+	
+	<br>}
+
+
+	<br>.<span class = "red">navMenuListItem</span>
+	<br>{
+	<br><span class = "blue">float:</span> left;
+	<br><span class = "blue">margin:</span>0 0 0 50px;
+	<br><span class = "blue">font-size:</span> 20px;
+	<br>}
+	
+	
+	
+	</div>
+
+	<br>I decided to use this many classes so I could have a wide range of control when creating the website.
+	<br>I found that using a list was easier than making a bunch of divs as I din't have to worry about messing with the width of each of the divs.
+	<br>All I had to do was use the float:left to achieve a similiar look.
+	<br>
+
+		<div class = "hwSubTitle">
+		<br>	4. Table and ordered list
+		</div>
+
+	</p>
+
+
+
+<br>
 
 </body>
 </html>
