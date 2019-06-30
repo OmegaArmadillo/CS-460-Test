@@ -8,6 +8,13 @@
 <link rel="stylesheet" type="text/css" href="..\Pages_Style.css">
 
 
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+
+
 <head>
 
 </head>
@@ -25,7 +32,7 @@ CS460 Project 1: Basic Webpage Creation
 	<br>We also had a list of requirments for our webpage.
 	<br>For my website I had the idea of creating a website for a traveling agency.
 	<br>The pages I created included a home page, a page that shows different locations, and a page that shows the travel rates.
-	<br>
+	<br>I used this <a href = "https://www.taniarascia.com/adding-syntax-highlighting-to-code-snippets/"> page</a> to learn how to do syntax highlighting easier.
 	
 	</div>
 
@@ -73,7 +80,58 @@ This part required me to create a GitHub repository and learn how to do things s
 		</div>
 		To implement Bootstrap I had to add this code to the webpage.
 		<br> <code> &#60; link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" &#62; </code>
+		<br> I decided to use Bootstrap to make a carousel.
+		<br> For this I used and example from https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=carousel
+		<br> For this I had to add <code> &#60;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">&#60;/script> </code> and
+ <code> &#60;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">&#60;/script> </code></code>
+		<br> The code I used is
+
+	
 	</p>
+
+
+
+<pre><code class = "language-markup">
+		&#60;div class = "sightPicDiv">
+		
+			&#60;div id = "sightCarousel" class = "carousel slide" data-ride = "carousel" data-interval = "4000" >
+
+				&#60;div class="carousel-inner">
+					&#60;div class="carousel-item active">
+						&#60;img src="Images/beach.jpg" alt="beach 1" style="width:85%;">
+					&#60;/div>
+
+					&#60;div class="carousel-item">
+						&#60;img src="Images/beach2.jpg" alt="beach 2" style="width:85%;">
+					&#60;/div>
+    
+					&#60;div class="carousel-item">
+						&#60;img src="Images/beach3.jpg" alt="beach 3" style="width:85%;">
+					&#60;/div>
+	
+				&#60;/div>
+		
+			&#60;/div>
+				
+		&#60;/div>
+
+</code>
+</pre>
+
+
+This is the CSS
+
+<pre>
+<code class = "language-css">
+#sightCarousel
+{
+	float:right;
+	width: 80%;
+}
+</code>
+</pre>
+
+
 
 	<p>
 
@@ -87,37 +145,40 @@ This part required me to create a GitHub repository and learn how to do things s
 		<br> Here are some examples of the classes I created.
 		
 		
-		<div class = "codeBox">
+		<pre><code class = "language-css">	
 		
-			<div class  = "blue">*</div>
-			{
-			<div class = "code">
-				
-				
-				<span class = "blue">font-family:</span> "Palatino";
-				
-			</div>
-			}
+*
+{
+	font-family: "Palatino"
+}
 
 
 
-		<br> <span class = "blue">a</span>:<span class = "red">visited</span>
-		<br>{
-		  <div class = "code">
-		  <span class = "blue">color:</span> white;
-			</div>
-		}
+a:visited {
+  color: white;
+}
 
-		<br>.<span class = "red">titleBox</span>
-		<br>{
-			<div>
-			 <span class = "blue">color:</span> white;
-			<br><span class = "blue">font-size</span> 50px;
-			<br><span class = "blue">background-color</span> MediumBlue;
-			<br><span class = "blue">width</span> 100%;
-			</div>
-		}
-	</div>
+.titleBox
+{
+	color: white;
+	font-size: 50px;
+	background-color: MediumBlue;
+	width: 100%;
+}
+
+
+
+.sun
+{
+	height: 70px;
+	width: 70px;
+	background-color: yellow;
+	border-radius: 50%;
+
+	float: left;
+
+}
+	</code></pre>
 
 	</p>
 	
@@ -130,64 +191,163 @@ This part required me to create a GitHub repository and learn how to do things s
 		For this I decided to use an unordered list as a navigation bar so i could fufill two requirements.
 		<br>This is my code
 
-	<div class = "codeBox">	
+	
 
 		
+<pre><code class = "language-markup">		
+		&#60;div class = "navMenu">
+		&#60;ul class = "navMenuList">
 		
-	<div >		<span class = "blue">&#60;div</span> <span class = "red">class</span> = <span class = "blue">"navMenu"&#62; </div> </span>
-	<div class = "code">	<span class = "blue">&#60;ul</span> <span class = "red">class</span> = <span class = "blue">"navMenuList"&#62;<span> </div>
+			&#60;li class = "navMenuListItem"> &#60;a href = "HW1_Sights.html"> Sights &#60;/a> &#60;/li>
+			&#60;li class = "navMenuListItem"> &#60;a href = "HW1_Rates.html"> Rates &#60;/a> &#60;/li>
 		
-	<div class = "code">		<span class = "blue">&#60;li</span> <span class = "red">class</span> = <span class = "blue">"navMenuListItem"&#62; &#60;a</span> <span class = "red">href</span> = <span class = "blue">"HW1_Sights.html"&#62;</span> Sights <span class = "blue">&#60;/a&#62; &#60;/li&#62;</span> </div>
-	<div class = "code">		<span class = "blue">&#60;li</span> <span class = "red">class</span> = <span class = "blue">"navMenuListItem"&#62; &#60;a</span> <span class = "red">href</span> = <span class = "blue">"HW1_Rates.html"&#62;</span> Rates <span class = "blue">&#60;/a&#62; &#60;/li&#62;</span> </div>
-			
-	<div class = "code">	<span class = "blue">&#60;/ul&#62;</span> </div>
+		&#60;/ul>
+	&#60;/div>	
+</code></pre>		
 		
-		
-	<div>	<span class = "blue">&#60;/div&#62;</span> </div>
-		
-		
-		</div>
 
 	<br>These are the styles I created
-	<div class = "codeBox">
+<pre><code class = "language-css">		
+
+		
+.navMenu
+{
+	text-align: center;
+	color: white;
+	background-color: GoldenRod;
+	height: 40px;
+
+}
+
+
+
+.navMenuList
+{
+
+	list-style-type: none;
 	
-	.<span class = "red">navMenu</span>
-	<br>{
-	<br><span class = "blue">text-align:</span> center;
-	<br><span class = "blue">color:</span> white;
-	<br><span class = "blue">background-color:</span> GoldenRod;
-	<br><span class = "blue">height:</span> 40px;
-	<br>}
+}
 
 
-
-	<br>.<span class = "red">navMenuList</span>
-	<br>{
-
-	<br><span class = "blue">list-style-type:</span> none;
+.navMenuListItem
+{
+	float: left;
+	margin:0 0 0 50px;
+	font-size: 20px;
+}
 	
-	<br>}
-
-
-	<br>.<span class = "red">navMenuListItem</span>
-	<br>{
-	<br><span class = "blue">float:</span> left;
-	<br><span class = "blue">margin:</span>0 0 0 50px;
-	<br><span class = "blue">font-size:</span> 20px;
-	<br>}
-	
-	
-	
-	</div>
+</code></pre>
 
 	<br>I decided to use this many classes so I could have a wide range of control when creating the website.
 	<br>I found that using a list was easier than making a bunch of divs as I din't have to worry about messing with the width of each of the divs.
 	<br>All I had to do was use the float:left to achieve a similiar look.
 	<br>
 
+</p>
+
+
+<p>
 		<div class = "hwSubTitle">
 		<br>	4. Table and ordered list
 		</div>
+For my ordered list I used it a a way to mark the popularity of different sights
+<br> Here is the code for my list
+<pre><code class = "language-markup">		
+		&#60;ol class = "sightList">
+			&#60;li class = "sightListItem"> Beach 1&#60;/li>
+			&#60;li class = "sightListItem"> Beach 2 &#60;/li>
+			&#60;li class = "sightListItem"> Beach 3 &#60;/li>
+	
+		&#60;/ol>
+</code></pre>
+
+Here is the css
+<pre><code class = "language-css">		
+.sightListDiv
+{
+	width: 20%;
+	float: left;
+	background-color: GoldenRod;
+	border-right: 10px solid MediumBlue;
+	text-align: center;
+	font-size: 25px;
+
+
+}
+
+
+.sightList
+{
+	height: 565px;
+
+}
+
+
+.sightListItem
+{
+	border: 3px solid GoldenRod;
+	background-color: MediumBlue;
+	width: 100%;
+	height: 50px;
+	float: left;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	/*border-radius:50%;
+	margin:0 0 20px 0; */
+	
+}
+
+</code></pre>
+
+With the list and the Bootstrap carousel this makes the page a multi-column format.
+<br> The home page fills the single column format.
+
+<br> The table I made a table of the different rates for travel.
+
+
+<pre><code class = "language-markup">		
+			&#60;table>
+		
+			&#60;tr>
+				&#60;th>Location&#60;/th>
+				&#60;th>Description&#60;/th>
+				&#60;th>Cost&#60;/th>
+			&#60;/tr>
+			
+			&#60;tr>
+				&#60;td>Hawaii&#60;/td>
+				&#60;td>A vacation classic&#60;/td>
+				&#60;td>100$/day&#60;/td>
+			
+			&#60;/tr>
+			
+			&#60;tr>
+				&#60;td>Caribbean&#60;/td>
+				&#60;td>An area with many sights&#60;/td>
+				&#60;td>150$/day&#60;/td>
+			&#60;/tr>
+		
+			&#60;tr>
+				&#60;td>New Zealand&#60;/td>
+				&#60;td>A more exotic trip&#60;/td>
+				&#60;td>200$/day&#60;/td>
+			&#60;/tr>
+		
+		&#60;/table>
+</code></pre>
+The css for the table is
+
+
+<pre><code class = "language-css">	
+table, th, td {
+  border: 1px solid black;
+  font-size: 30px;
+  width: 100%;
+}
+</code></pre>
+
+
 
 	</p>
 
