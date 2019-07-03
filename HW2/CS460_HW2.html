@@ -10,28 +10,86 @@
 
 	<link rel="stylesheet" type="text/css" href="HW2_Style.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <title>Something</title>
   </head>
+  
   <body>
+  
+  <script>
+  
+	var currentQuestion = 0;
 	
-	<div class = "container-fluid" style = "background-color:red; font-size: 50px;">
-    Tester
+	var answers = ["", "", ""];
+	
+	var barProgress = 0;
+	
+  
+  function submitQuestion(currentQuestion)
+  {
+	answers[currentQuestion] = $("[name = text]")[currentQuestion].value;
+	
+	alert(answers[currentQuestion]);
+	
+	// var xA = document.getElementsByName("answer")[currentQuestion];
+	var xA = $("[name = answer]")[currentQuestion];
+	xA.style.visibility = 'hidden';
+	
+	var xQ = $("[name = question]")[currentQuestion];
+	xQ.innerHTML = "Done";
+
+	currentQuestion = currentQuestion + 1;
+
+	var y = $("[name = answer]")[currentQuestion];
+	y.style.visibility = 'visible';
+	
+	
+	var bar = $("[name = completion]")[0];
+	bar.setAttribute('style','width:' + (barProgress + 20) + '%');
+	barProgress = barProgress + 20;
+	bar.innerHTML = barProgress + "%";
+	
+  }
+  
+  
+  function createColor ()
+  {
+  
+  }
+  
+  </script>
+  
+  
+  
+  
+  
+<div class = "begin">	
+	<div class = "container-fluid title">
+    Spirit Color Shower
 	</div>
 	
-	<div class = "container-fluid" style = "background-color:SkyBlue; height:50px">
+	<div class = "container-fluid progressBox">
 		
-  <div class="row align-items-center" style = "height:50px">
-		<div class="col">
-			<div class="progress">
-				<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+		<div class="row align-items-center" style = "height:50px">
+			<div class="col">
+				<div class="progress">
+					<div class="progress-bar" name = "completion" role="progressbar" style = "width:0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	
-	<div class = "container-fluid">
+
+	<div class = "description">
+	Input some information about yourself and we will show you your Spirit Color
+	</div>
+
+</div>
+
+		
+	<!-- <div class = "container-fluid">
 	
 		<div class = "container" >
 		
@@ -52,10 +110,143 @@
 		
 
 	
-	</div>
+	</div>-->
 	
+		<div class = "container-fluid background">
+		
+			<div class = "container questions">
+
+				<div class = "row">
+				
+					<div class = "col-md-auto">
+						Q1
+					</div>
+				
+					<div class = "col" name = "question">
+						What is your first name?
+					</div>
+				
+					<div class = "col" name = "answer">
+				
+						<input type="text" name = "text" placeholder="Search..">
+						<button type = "button" onclick = "submitQuestion(currentQuestion)">submit</button>
+						
+					</div>
+						
+				</div>
+				
+				<div class = "row" >
+				
+					<div class = "col-md-auto">
+						Q2
+					</div>
+				
+					<div class = "col" name = "question">
+						How old are you?
+					</div>
+				
+					<div class = "col" name = "answer" style = "visibility:hidden;">
+				
+						<input type="text" name = "text" placeholder="Search..">
+						<button type = "button" onclick = "submitQuestion(currentQuestion + 1)">submit</button>
+						
+					</div>
+						
+				</div>
+				
+				<div class = "row" >
+				
+					<div class = "col-md-auto">
+						Q3
+					</div>
+				
+					<div class = "col" name = "question">
+						What city were you born in?
+					</div>
+				
+					<div class = "col" name = "answer" style = "visibility:hidden;">
+				
+						<input type="text" name = "text" placeholder="Search..">
+						<button type = "button" onclick = "submitQuestion(currentQuestion + 2)">submit</button>
+						
+					</div>
+						
+				</div>
+				
+				
+				<div class = "row" >
+				
+					<div class = "col-md-auto">
+						Q4
+					</div>
+				
+					<div class = "col" name = "question">
+						something?
+					</div>
+				
+					<div class = "col" name = "answer" style = "visibility:hidden;">
+				
+						<input type="text" name = "text" placeholder="Search..">
+						<button type = "button" onclick = "submitQuestion(currentQuestion + 3)">submit</button>
+						
+					</div>
+						
+				</div>
+				
+				
+				<div class = "row" >
+				
+					<div class = "col-md-auto">
+						Q5
+					</div>
+				
+					<div class = "col" name = "question">
+						last?
+					</div>
+				
+					<div class = "col" name = "answer" style = "visibility:hidden;">
+				
+						<input type="text" name = "text" placeholder="Search..">
+						<button type = "button" onclick = "submitQuestion(currentQuestion + 4)">submit</button>
+						
+					</div>
+						
+				</div>
+				
+				
+				<div class = "row" >
+				
 	
-	</div>
+				
+					<div class = "col" name = "answer" style = "visibility:hidden; text-align:center;">
+				
+						Create your Color
+						<div class="w-100"></div>
+						<button type = "button" onclick = "createColor()">submit</button>
+						
+					</div>
+						
+				</div>
+				
+
+			</div>
+		
+		<div style = "visibility:hidden;">
+			<div class = "container showBox">
+				Here is your very own spirit color.
+			</div>	
+		
+			<div class = " container colorBox">
+			</div>		
+		
+		</div>
+		
+		
+		
+		</div>	
+		
+		
+
 	
 	
 	

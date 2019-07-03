@@ -1,0 +1,68 @@
+.begin
+{
+		background-image: url('Images/background.jpg');	
+}
+
+.title
+{
+
+	font-size:50px;
+	color:white;
+}
+
+.progressBox
+{
+
+	height:50px;	
+}
+
+.description
+{
+	text-align: center;
+	border-bottom: 5px solid black; 
+	color:white;
+}
+
+.background
+{
+	 background-color:purple;
+	background-image: url('Images/background2.jpg');
+	height: 569px;
+}
+
+.questions
+{
+	background-color:magenta;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+}
+
+.showBox
+{
+	height: 50px;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+	text-align: center;
+	font-size: 25px;
+	background-image: url('Images/background.jpg');
+	color: white;	
+}
+
+.endBox
+{
+	background-color:purple;
+	background-image: url('Images/background.jpg');
+	height: 300px;
+
+}
+
+.colorBox
+{
+	height:250px;
+	background-color: blue;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-bottom: 5px solid black;
+}
