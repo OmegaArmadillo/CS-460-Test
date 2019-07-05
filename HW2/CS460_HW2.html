@@ -37,7 +37,7 @@
 	 	 	
 		answers[currentQuestion] = $("[name = text]")[currentQuestion].value;
 	
-		alert(answers[currentQuestion]);
+		//alert(answers[currentQuestion]);
 	
 		var xA = $("[name = answer]")[currentQuestion];
 		xA.style.visibility = 'hidden';
@@ -67,11 +67,37 @@
   
   function createColor ()
   {
-	var r = answers[0] + answers[1];
+	var r = (answers[3]*10) + (answers[4]*10);
 	
-	var g = answers[2] + answers[3];
+	var g = (answers[1] * answers[2]) - 100;
 	
-	var b = answers[4];
+	var b = 255 - (answers[0]*2);
+	
+	if (r > 255)
+	{
+		r = 255;
+	}
+	if (g > 255)
+	{
+		g = 255;
+	}
+	if (b > 255)
+	{
+		b = 255;
+	}
+	
+	if (r < 0)
+	{
+		r = 0;
+	}
+	if (g < 0)
+	{
+		g = 0;
+	}
+	if (b < 0)
+	{
+		b = 0;
+	}
 	
 	<!-- https://stackoverflow.com/questions/14323082/why-doesnt-backgroundcolor-rgba-b-c-work -->
 	
@@ -113,9 +139,9 @@
 		<div class = "container visibilityBox2">
 		Input some information about yourself and we will show you your Spirit Color
 		</div>
-</div>
+	</div>
 
-		
+</div>		
 	
 		<div class = "container-fluid background">
 		
@@ -128,7 +154,7 @@
 					</div>
 				
 					<div class = "col" name = "question">
-						What is your first name?
+						How old are you?
 					</div>
 				
 					<div class = "col" name = "answer">
@@ -147,7 +173,7 @@
 					</div>
 				
 					<div class = "col" name = "question">
-						How old are you?
+						What month were you born in? (number value)
 					</div>
 				
 					<div class = "col" name = "answer" style = "visibility:hidden;">
@@ -164,9 +190,9 @@
 					<div class = "col-md-auto">
 						Q3
 					</div>
-				
+						
 					<div class = "col" name = "question">
-						What city were you born in?
+						What day were you born in? (number value)
 					</div>
 				
 					<div class = "col" name = "answer" style = "visibility:hidden;">
@@ -186,7 +212,7 @@
 					</div>
 				
 					<div class = "col" name = "question">
-						something?
+						How many pets do you own?
 					</div>
 				
 					<div class = "col" name = "answer" style = "visibility:hidden;">
@@ -206,7 +232,7 @@
 					</div>
 				
 					<div class = "col" name = "question">
-						last?
+						How many siblings do you have?
 					</div>
 				
 					<div class = "col" name = "answer" style = "visibility:hidden;">
@@ -236,15 +262,16 @@
 
 			</div>
 		
-		<div name = "final" style = "visibility:hidden;">
-			<div class = "container showBox">
+			
+			<div name = "final" style = "visibility:hidden;">
+				<div class = "container showBox">
 				Here is your very own spirit color.
-			</div>	
+				</div>	
 		
-			<div class = " container colorBox" name = "coloredBox">
-			</div>		
+				<div class = " container colorBox" name = "coloredBox">
+				</div>		
 		
-		</div>
+			</div>
 		
 		
 		
