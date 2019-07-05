@@ -15,11 +15,27 @@
 	height:50px;	
 }
 
+.visibilityBox
+{
+	background-color: magenta;
+	text-align: center;
+	border: 5px solid black; 
+}
+
+.visibilityBox2
+{
+	background-color: magenta;
+	text-align: center;
+	border-top: 5px solid black;
+	border-left: 5px solid black;
+	border-right: 5px solid black;	
+	border-bottom: 1px solid black;
+}
+
 .description
 {
 	text-align: center;
 	border-bottom: 5px solid black; 
-	color:white;
 }
 
 .background
@@ -45,7 +61,11 @@
 	border-bottom: 5px solid black;
 	text-align: center;
 	font-size: 25px;
+<<<<<<< HEAD
 	background-color:magenta;
+=======
+	background-color:magenta;	
+>>>>>>> 0c9e32924f9b3fadef4ed0718cc79d79172ed2cd
 }
 
 
