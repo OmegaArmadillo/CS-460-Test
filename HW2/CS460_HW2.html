@@ -13,7 +13,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-    <title>Something</title>
+    <title>Spirit Color Shower</title>
   </head>
   
   <body>
@@ -22,41 +22,67 @@
   
 	var currentQuestion = 0;
 	
-	var answers = ["", "", ""];
+	var answers = [0, 0, 0, 0, 0];
 	
 	var barProgress = 0;
 	
   
   function submitQuestion(currentQuestion)
   {
-	answers[currentQuestion] = $("[name = text]")[currentQuestion].value;
+  
+	var test = $("[name = text]")[currentQuestion].value;
 	
-	alert(answers[currentQuestion]);
+	if(Number.isInteger(+test))
+	{
+	 	 	
+		answers[currentQuestion] = $("[name = text]")[currentQuestion].value;
 	
-	// var xA = document.getElementsByName("answer")[currentQuestion];
-	var xA = $("[name = answer]")[currentQuestion];
-	xA.style.visibility = 'hidden';
+		alert(answers[currentQuestion]);
 	
-	var xQ = $("[name = question]")[currentQuestion];
-	xQ.innerHTML = "Done";
+		// var xA = document.getElementsByName("answer")[currentQuestion];
+		var xA = $("[name = answer]")[currentQuestion];
+		xA.style.visibility = 'hidden';
+	
+		var xQ = $("[name = question]")[currentQuestion];
+		xQ.innerHTML = "Done";
 
-	currentQuestion = currentQuestion + 1;
+		currentQuestion = currentQuestion + 1;
 
-	var y = $("[name = answer]")[currentQuestion];
-	y.style.visibility = 'visible';
+		var y = $("[name = answer]")[currentQuestion];
+		y.style.visibility = 'visible';
 	
 	
-	var bar = $("[name = completion]")[0];
-	bar.setAttribute('style','width:' + (barProgress + 20) + '%');
-	barProgress = barProgress + 20;
-	bar.innerHTML = barProgress + "%";
+		var bar = $("[name = completion]")[0];
+		bar.setAttribute('style','width:' + (barProgress + 20) + '%');
+		barProgress = barProgress + 20;
+		bar.innerHTML = barProgress + "%";
+	 
+	}
+	else
+	{
+		alert('Input must be a number');	
+	}
 	
   }
   
   
   function createColor ()
   {
+	var r = answers[0] + answers[1];
+	
+	var g = answers[2] + answers[3];
+	
+	var b = answers[4];
+	
+	<!-- https://stackoverflow.com/questions/14323082/why-doesnt-backgroundcolor-rgba-b-c-work -->
+	
+	var box = $("[name = coloredBox]")[0];
+	box.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+	
   
+	var x = $("[name = final]")[0];
+	x.style.visibility = 'visible';
+	
   }
   
   </script>
@@ -67,7 +93,9 @@
   
 <div class = "begin">	
 	<div class = "container-fluid title">
-    Spirit Color Shower
+		<div class = "container title visibilityBox">
+	Spirit Color Shower
+		</div>
 	</div>
 	
 	<div class = "container-fluid progressBox">
@@ -83,34 +111,12 @@
 	
 
 	<div class = "description">
-	Input some information about yourself and we will show you your Spirit Color
-	</div>
-
+		<div class = "container visibilityBox2">
+		Input some information about yourself and we will show you your Spirit Color
+		</div>
 </div>
 
 		
-	<!-- <div class = "container-fluid">
-	
-		<div class = "container" >
-		
-			<div class = "row" style = "background-color:red;  height:200px; ">
-		
-				<div class = "col" style = "background-color:orange;">
-				fdsf
-				</div>
-				
-				
-				<div class = "col" style = "background-color:green;">
-				sdf
-				</div>
-		
-			</div>
-		
-		</div>
-		
-
-	
-	</div>-->
 	
 		<div class = "container-fluid background">
 		
@@ -231,12 +237,12 @@
 
 			</div>
 		
-		<div style = "visibility:hidden;">
+		<div name = "final" style = "visibility:visible;">
 			<div class = "container showBox">
 				Here is your very own spirit color.
 			</div>	
 		
-			<div class = " container colorBox">
+			<div class = " container colorBox" name = "coloredBox">
 			</div>		
 		
 		</div>
