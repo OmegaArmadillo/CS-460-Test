@@ -14,18 +14,14 @@
 <link rel="stylesheet" type="text/css" href="..\Pages_Style.css">
 
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
-/>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
-
+<link href="prism.css" rel="stylesheet"/>
 
 
 </head>
 
 <body>
+
+<script src="prism.js"></script>
 
 	<div  class = "title">
 	CS460 Project 2: Bootstrap Grid, JavaScript, and JQuery
@@ -39,8 +35,8 @@
 		<br> For this I have a single homepage and a css file.
 	</div>
 	
-	
-	
+		Here is the final design of the website and a link to it. <a href = "../HW2/CS460_HW2.html"> HW2 Page </a>
+		<br><img src = "HW2_Images/Website.png" style = "width:60%;">	
 	
 	
 
@@ -69,6 +65,240 @@
 		
 	
 	</p>
+	
+	
+	<p>
+		<div class = "hwTitle">
+			Coding
+		</div>
+
+		The first important part of the webpage is how i structured my questions
+		<br> The way they are structured is important for the code I have to work
+		<br> An example of a column is
+		
+		<pre> <code class = "language-markup">
+		<script type = "prism-html-markup">
+		
+				
+				<div class = "row">
+				
+					<div class = "col-md-auto">
+						Q1
+					</div>
+				
+					<div class = "col" name = "question">
+						How old are you?
+					</div>
+				
+					<div class = "col" name = "answer">
+				
+						<input type="text" name = "text" placeholder="Search..">
+						<button type = "button" onclick = "submitQuestion(currentQuestion)">submit</button>
+						
+					</div>
+						
+				</div>		
+		
+		
+		</script>
+		</code></pre>
+		
+		
+		The last row is different and looks like this
+		
+		
+		<pre> <code class = "language-markup">
+		<script type = "prism-html-markup">
+		
+		<div class = "row" >
+			
+			<div class = "col" name = "answer" style = "visibility:hidden; text-align:center;">
+				
+				Create your Color
+				<div class="w-100"></div>
+					<button type = "button" onclick = "createColor()">submit</button>		
+				</div>		
+		</div>
+		
+		</script>
+		</code></pre>
+
+
+		The code also ties into the progress bar that looks like this
+		
+		<pre> <code class = "language-markup">
+		<script type = "prism-html-markup">		
+		
+	<div class = "container-fluid progressBox">
+		<div class="row align-items-center" style = "height:50px">
+			<div class="col">
+				<div class="progress">
+					<div class="progress-bar" name = "completion" role="progressbar" style = "width:0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+		</script>
+		</code></pre>	
+
+	
+		Here is the code that works for the first five questions
+		<br>currentQuestion keeps track of what queation the user is on, answers keep track of the users answers to questions, and barProgress is used to update the progress bar when a quesiton is answered.
+		<br>All of the columns that have the question text are named question.
+		<br>All of the columns that have the text field and submit button are named answer.
+		<br>All of the text fields for the answer are named text.
+		<br>I did this so I could use one function for all of the questions as I knew what was where, what the order was, and what question the user would be on.
+		<br>First it will get the input that user typed in to the text field.
+		<br>It will then check if the input is an integer, if it is the code continues otherwise an error message is shown and the user must try a different.
+		<br>First it saves the answer to the current question in the correct array spot.
+		<br>For the current question it sets the question text to say "Done" and makes the button and text field hidden so the user cannot answer the same quesion twice.
+		<br>The button and text field for the next question become visible.
+		<br>The width of the progress bar and the value update.
+		<br>The final time that the code runs will instead maake the "create your color" button appear in the final row
+		<pre> <code class = "language-javascript">
+
+	/*keeps track of what question the user is on*/
+	var currentQuestion = 0;
+	
+	/*holds the answers to the questions*/
+	var answers = [0, 0, 0, 0, 0];
+	
+	/*keeps track of the current value of the progress bar*/
+	var barProgress = 0;
+	
+  /*function used when the submit button of an answer is pressed*/
+  function submitQuestion(currentQuestion)
+  {
+	/*save the answer to the question*/
+	var test = $("[name = text]")[currentQuestion].value;
+	
+	/*tests to see if the value is an integer*/
+	if(Number.isInteger(+test))
+	{
+	 	/*saves the answer into the answer array*/ 	
+		answers[currentQuestion] = $("[name = text]")[currentQuestion].value;
+	
+		/*makes the text field and button for the current question hidden*/
+		var xA = $("[name = answer]")[currentQuestion];
+		xA.style.visibility = 'hidden';
+	
+		/*makes the questio text for the current question say "Done"*/
+		var xQ = $("[name = question]")[currentQuestion];
+		xQ.innerHTML = "Done";
+
+		/*updates the current question*/
+		currentQuestion = currentQuestion + 1;
+
+		/*makes the next question's text field and button visible*/
+		var y = $("[name = answer]")[currentQuestion];
+		y.style.visibility = 'visible';
+	
+		/*updates the text and width of the progress bar*/
+		var bar = $("[name = completion]")[0];
+		bar.setAttribute('style','width:' + (barProgress + 20) + '%');
+		barProgress = barProgress + 20;
+		bar.innerHTML = barProgress + "%";
+	 
+	}
+	else
+	{
+		/*alerts the user if the value is not valid*/
+		alert('Input must be a number');	
+	}
+	
+  }
+
+		</code></pre>		
+
+	Here is the html for the boxes that appear after the last queestion is answered .
+	<br> These are important for understanding the last piece of code.
+
+		<pre> <code class = "language-markup">
+		<script type = "prism-html-markup">	
+
+	<div name = "final" style = "visibility:hidden;">
+		<div class = "container showBox">
+			Here is your very own spirit color.
+		</div>	
+		
+		<div class = " container colorBox" name = "coloredBox">
+		</div>		
+		
+	</div>
+
+
+		</script>
+		</code></pre>
+
+	This is the code that runs when the "create your color" button is pressed.
+	<br>First it does all of the calculations to determine the r, g, and b values for the color.
+	<br>It then makes sure that all of the values are between 0 and 255.
+	<br>It then changes the background color of the color box to the calculated color.
+	<br>Finally it makes the last two boxes visible.
+	
+		<pre> <code class = "language-javascript">
+
+  function createColor ()
+  {
+	/*calculates the r, g, and b values based on the user's answers*/
+	var r = (answers[3]*10) + (answers[4]*10);
+	
+	var g = (answers[1] * answers[2]) - 100;
+	
+	var b = 255 - (answers[0]*2);
+	
+	/*makes sure that the r, g, and b values are in the correct range*/
+	if (r > 255)
+	{
+		r = 255;
+	}
+	if (g > 255)
+	{
+		g = 255;
+	}
+	if (b > 255)
+	{
+		b = 255;
+	}
+	
+	if (r < 0)
+	{
+		r = 0;
+	}
+	if (g < 0)
+	{
+		g = 0;
+	}
+	if (b < 0)
+	{
+		b = 0;
+	}
+	
+	<!-- https://stackoverflow.com/questions/14323082/why-doesnt-backgroundcolor-rgba-b-c-work -->
+	/*sets the background color of the final box to be the calculated color*/
+	var box = $("[name = coloredBox]")[0];
+	box.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+	
+	/*makes the final box visible*/
+	var x = $("[name = final]")[0];
+	x.style.visibility = 'visible';
+	
+  }
+		</code></pre>	  
+	
+	</p>
+	
+	
+	
+	
+	<p>
+		<div class = "hwTitle">
+			Notes
+		</div>
+	</p>
+	
+	
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
