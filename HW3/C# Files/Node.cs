@@ -2,6 +2,7 @@
 
 public class Node <T>
 {
+    
     public T data;
     public Node<T> next;
 
@@ -10,6 +11,12 @@ public class Node <T>
         this.data = next;
         this.next = next;
 
+    }
+
+    static int main()
+    {
+
+        return 1;
     }
 
     

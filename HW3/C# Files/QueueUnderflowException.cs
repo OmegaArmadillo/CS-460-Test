@@ -1,10 +1,10 @@
 ﻿using System;
 
-public class QueueUnderflowException : System.Exception
+public class QueueUnderflowException : Exception
 {
 	public QueueUnderflowException()
 	{
-        base.QueueUnderflowException();
+        base();
 
 
 
@@ -12,7 +12,7 @@ public class QueueUnderflowException : System.Exception
 
     public QueueUnderflowException(String message)
     {
-        base.QueueUnderflowException(message);
+        base(message);
     }
 
  
